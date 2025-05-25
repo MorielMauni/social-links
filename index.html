@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moriel Mauni - Social Links</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(45deg, #6b7280, #3b82f6, #10b981, #ef4444);
+        background-size: 400%;
+        animation: colorShift 15s ease-in-out infinite;
+      }
+
+      @keyframes colorShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 400% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .container {
+        text-align: center;
+        background: linear-gradient(135deg, #ffffff, #e2e8f0);
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        max-width: 600px;
+        width: 90%;
+      }
+
+      .profile-pic {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        object-fit: cover;
+        border: 4px solid #3b82f6;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+      }
+
+      .profile-pic:hover {
+        transform: scale(1.05);
+      }
+
+      h1 {
+        color: #1e3a8a;
+        margin-bottom: 10px;
+        font-size: 2.2em;
+        font-weight: 600;
+      }
+
+      .title {
+        color: #2c5282;
+        font-size: 1.3em;
+        margin-bottom: 10px;
+        font-weight: 400;
+      }
+
+      .tagline {
+        color: #4b5563;
+        font-size: 1.1em;
+        margin-bottom: 30px;
+        font-style: italic;
+        font-weight: 400;
+      }
+
+      .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        animation: fadeIn 1s ease-in;
+      }
+
+      .social-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: #1e3a8a;
+        font-size: 0.95em;
+        transition: transform 0.2s;
+      }
+
+      .social-link i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 70px;
+        color: white;
+        border-radius: 50%;
+        font-size: 2.2em;
+        margin-bottom: 10px;
+        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      }
+
+      .social-link i:hover {
+        transform: scale(1.15);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .social-link.linkedin i {
+        background-color: #0a66c2;
+      }
+
+      .social-link.linkedin:hover i {
+        background-color: #004182;
+      }
+
+      .social-link.github i {
+        background-color: #24292e;
+      }
+
+      .social-link.github:hover i {
+        background-color: #1a1e22;
+      }
+
+      .social-link.portfolio i {
+        background-color: #ef4444;
+      }
+
+      .social-link.portfolio:hover i {
+        background-color: #dc2626;
+      }
+
+      .social-link.cv i {
+        background-color: #3b82f6;
+      }
+
+      .social-link.cv:hover i {
+        background-color: #2563eb;
+      }
+
+      .social-link.email i {
+        background-color: #10b981;
+      }
+
+      .social-link.email:hover i {
+        background-color: #059669;
+      }
+
+      .social-link:active i {
+        transform: scale(1);
+      }
+
+      .social-link span {
+        font-size: 0.95em;
+        color: #1e3a8a;
+        font-weight: 400;
+      }
+
+      .featured-section {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #f1f5f9;
+        border-radius: 10px;
+        border: 2px solid #3b82f6;
+        transition: transform 0.3s;
+      }
+
+      .featured-section:hover {
+        transform: translateY(-5px);
+      }
+
+      .featured-section h2 {
+        color: #1e3a8a;
+        font-size: 1.4em;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .featured-section p {
+        color: #4b5563;
+        font-size: 0.95em;
+        margin-bottom: 15px;
+      }
+
+      .featured-section a {
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .featured-section a:hover {
+        text-decoration: underline;
+      }
+
+      .cta {
+        margin-top: 20px;
+        font-size: 0.95em;
+        color: #4b5563;
+        font-weight: 400;
+      }
+
+      .cta a {
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .cta a:hover {
+        text-decoration: underline;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 20px;
+        }
+
+        .profile-pic {
+          width: 100px;
+          height: 100px;
+          border-width: 3px;
+        }
+
+        h1 {
+          font-size: 1.6em;
+        }
+
+        .title {
+          font-size: 1.1em;
+        }
+
+        .tagline {
+          font-size: 0.9em;
+        }
+
+        .social-link i {
+          width: 55px;
+          height: 55px;
+          font-size: 1.8em;
+        }
+
+        .social-link span {
+          font-size: 0.85em;
+        }
+
+        .featured-section h2 {
+          font-size: 1.2em;
+        }
+
+        .featured-section p {
+          font-size: 0.85em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="https://avatars.githubusercontent.com/MorielMauni"
+        alt="Moriel Mauni Profile Picture"
+        class="profile-pic"
+      />
+      <h1>Moriel Mauni</h1>
+      <div class="title">DevOps Engineer</div>
+      <div class="tagline">The power of self-taught and dedication, a never-ending journey</div>
+      <div class="social-links">
+        <a
+          href="https://www.linkedin.com/in/morielmauni/"
+          target="_blank"
+          class="social-link linkedin"
+          title="LinkedIn"
+        >
+          <i class="fab fa-linkedin-in"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a
+          href="https://github.com/MorielMauni/"
+          target="_blank"
+          class="social-link github"
+          title="GitHub"
+        >
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+        </a>
+        <a
+          href="https://www.morielmauni.com"
+          target="_blank"
+          class="social-link portfolio"
+          title="Portfolio"
+        >
+          <i class="fas fa-briefcase"></i>
+          <span>Portfolio</span>
+        </a>
+        <a
+          href="https://drive.google.com/file/d/1eG-AERcq3NMxlvG9px6G7RzSWsgZLDAb/view?usp=drive_link"
+          target="_blank"
+          class="social-link cv"
+          title="CV"
+        >
+          <i class="fas fa-file-alt"></i>
+          <span>CV</span>
+        </a>
+        <a
+          href="mailto:morielmauni@gmail.com"
+          class="social-link email"
+          title="Send Email"
+        >
+          <i class="fas fa-envelope"></i>
+          <span>Email</span>
+        </a>
+      </div>
+      <div class="featured-section">
+        <h2>Featured Project: Kubernetes Homelab</h2>
+        <p>
+          Designed a fully automated homelab for 2025, leveraging Kubernetes,
+          FluxCD, and GitOps to streamline self-hosted services and
+          infrastructure management.
+        </p>
+        <a href="https://github.com/MorielMauni/homelab-2025" target="_blank"
+          >Explore More on GitHub</a
+        >
+      </div>
+      <div class="featured-section">
+        <h2>Featured Insight: Linux for DevOps</h2>
+        <p>
+          Shared insights on leveraging Linux-based systems for DevOps, focusing
+          on automation, containerization, and efficient workflows to boost
+          productivity.
+        </p>
+        <a
+          href="https://www.linkedin.com/posts/morielmauni_lets-talk-about-using-a-linux-based-system-activity-7325776446159773696-rzaV"
+          target="_blank"
+          >Read More on LinkedIn</a
+        >
+      </div>
+      <div class="cta">
+        Interested in collaborating?
+        <a href="mailto:morielmauni@gmail.com">Let's connect!</a>
+      </div>
+    </div>
+  </body>
+</html>
