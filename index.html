@@ -21,31 +21,28 @@
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        background: linear-gradient(45deg, #6b7280, #3b82f6, #10b981, #ef4444);
-        background-size: 400%;
-        animation: colorShift 15s ease-in-out infinite;
+        background: #000;
+        overflow: hidden;
       }
 
-      @keyframes colorShift {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 400% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
+      canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
       }
 
       .container {
         text-align: center;
-        background: linear-gradient(135deg, #ffffff, #e2e8f0);
+        background: rgba(55, 65, 81, 0.9); /* More grey-ish semi-transparent dark grey */
         padding: 40px;
         border-radius: 16px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         max-width: 600px;
         width: 90%;
+        z-index: 1;
       }
 
       .profile-pic {
@@ -54,8 +51,8 @@
         border-radius: 50%;
         margin-bottom: 20px;
         object-fit: cover;
-        border: 4px solid #3b82f6;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border: 4px solid #4ade80; /* Neon green */
+        box-shadow: 0 4px 10px rgba(74, 222, 128, 0.3);
         transition: transform 0.3s;
       }
 
@@ -64,21 +61,22 @@
       }
 
       h1 {
-        color: #1e3a8a;
+        color: #2dd4bf; /* Vibrant teal */
         margin-bottom: 10px;
         font-size: 2.2em;
         font-weight: 600;
+        text-shadow: 0 0 5px rgba(45, 212, 191, 0.5);
       }
 
       .title {
-        color: #2c5282;
+        color: #f3f4f6; /* Soft white */
         font-size: 1.3em;
         margin-bottom: 10px;
         font-weight: 400;
       }
 
       .tagline {
-        color: #4b5563;
+        color: #f3f4f6;
         font-size: 1.1em;
         margin-bottom: 30px;
         font-style: italic;
@@ -98,7 +96,7 @@
         flex-direction: column;
         align-items: center;
         text-decoration: none;
-        color: #1e3a8a;
+        color: #f3f4f6;
         font-size: 0.95em;
         transition: transform 0.2s;
       }
@@ -109,7 +107,7 @@
         justify-content: center;
         width: 70px;
         height: 70px;
-        color: white;
+        color: #fff;
         border-radius: 50%;
         font-size: 2.2em;
         margin-bottom: 10px;
@@ -118,47 +116,47 @@
 
       .social-link i:hover {
         transform: scale(1.15);
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 15px rgba(74, 222, 128, 0.5); /* Neon green glow */
       }
 
       .social-link.linkedin i {
-        background-color: #0a66c2;
+        background-color: #3b82f6; /* Softer blue */
       }
 
       .social-link.linkedin:hover i {
-        background-color: #004182;
-      }
-
-      .social-link.github i {
-        background-color: #24292e;
-      }
-
-      .social-link.github:hover i {
-        background-color: #1a1e22;
-      }
-
-      .social-link.portfolio i {
-        background-color: #ef4444;
-      }
-
-      .social-link.portfolio:hover i {
-        background-color: #dc2626;
-      }
-
-      .social-link.cv i {
-        background-color: #3b82f6;
-      }
-
-      .social-link.cv:hover i {
         background-color: #2563eb;
       }
 
+      .social-link.github i {
+        background-color: #d1d5db; /* Light grey */
+      }
+
+      .social-link.github:hover i {
+        background-color: #9ca3af;
+      }
+
+      .social-link.portfolio i {
+        background-color: #f87171; /* Warm coral */
+      }
+
+      .social-link.portfolio:hover i {
+        background-color: #ef4444;
+      }
+
+      .social-link.cv i {
+        background-color: #a855f7; /* Bright purple */
+      }
+
+      .social-link.cv:hover i {
+        background-color: #9333ea;
+      }
+
       .social-link.email i {
-        background-color: #10b981;
+        background-color: #4ade80; /* Neon green */
       }
 
       .social-link.email:hover i {
-        background-color: #059669;
+        background-color: #22c55e;
       }
 
       .social-link:active i {
@@ -167,61 +165,65 @@
 
       .social-link span {
         font-size: 0.95em;
-        color: #1e3a8a;
+        color: #f3f4f6;
         font-weight: 400;
       }
 
       .featured-section {
         margin-top: 30px;
         padding: 20px;
-        background-color: #f1f5f9;
+        background-color: rgba(75, 85, 99, 0.9); /* Lighter grey-ish for contrast */
         border-radius: 10px;
-        border: 2px solid #3b82f6;
+        border: 2px solid #2dd4bf; /* Teal border */
         transition: transform 0.3s;
       }
 
       .featured-section:hover {
         transform: translateY(-5px);
+        box-shadow: 0 0 10px rgba(45, 212, 191, 0.3);
       }
 
       .featured-section h2 {
-        color: #1e3a8a;
+        color: #2dd4bf;
         font-size: 1.4em;
         margin-bottom: 10px;
         font-weight: 600;
+        text-shadow: 0 0 5px rgba(45, 212, 191, 0.5);
       }
 
       .featured-section p {
-        color: #4b5563;
+        color: #f3f4f6;
         font-size: 0.95em;
         margin-bottom: 15px;
       }
 
       .featured-section a {
-        color: #3b82f6;
+        color: #2dd4bf;
         text-decoration: none;
         font-weight: bold;
       }
 
       .featured-section a:hover {
         text-decoration: underline;
+        color: #4ade80; /* Neon green on hover */
       }
 
       .cta {
         margin-top: 20px;
         font-size: 0.95em;
-        color: #4b5563;
+        color: #f3f4f6;
         font-weight: 400;
       }
 
       .cta a {
-        color: #3b82f6;
+        color: #2dd4bf;
         text-decoration: none;
         font-weight: bold;
       }
 
       .cta a:hover {
         text-decoration: underline;
+        color: #4ade80;
       }
 
       @keyframes fadeIn {
@@ -279,6 +281,7 @@
     </style>
   </head>
   <body>
+    <canvas id="matrix"></canvas>
     <div class="container">
       <img
         src="https://avatars.githubusercontent.com/MorielMauni"
@@ -363,5 +366,49 @@
         <a href="mailto:morielmauni@gmail.com">Let's connect!</a>
       </div>
     </div>
+    <script>
+      const canvas = document.getElementById('matrix');
+      const ctx = canvas.getContext('2d');
+
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+
+      const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+      const fontSize = 14;
+      const columns = canvas.width / fontSize;
+      const drops = [];
+
+      for (let x = 0; x < columns; x++) {
+        drops[x] = 1;
+      }
+
+      function draw() {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = 'rgba(74, 222, 128, 0.8)'; /* Softer neon green */
+        ctx.font = fontSize + 'px monospace';
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = chars.charAt(Math.floor(Math.random() * chars.length));
+          const x = i * fontSize;
+          const y = drops[i] * fontSize;
+
+          ctx.fillText(text, x, y);
+
+          if (y > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+          drops[i]++;
+        }
+      }
+
+      setInterval(draw, 33);
+
+      window.addEventListener('resize', () => {
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+      });
+    </script>
   </body>
 </html>
